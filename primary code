@@ -1,0 +1,281 @@
+---
+title: "analysis_take_2"
+author: "Kirsten Schoff"
+date: "2023-04-05"
+output: html_document
+---
+
+#Packages Used
+```{r}
+library(tidyverse)
+library(dplyr)
+library(ggplot2)
+install.packages("lme4")
+library(lme4)
+library(readxl)
+```
+
+#Data Wrangling
+```{r}
+
+s1_dat <- read_excel("Desktop/Thesis/S1_dat.xlsx")
+s2_dat <- read_excel("Desktop/Thesis/S2_dat.xlsx")
+s3_dat <- read_excel("Desktop/Thesis/S3_dat.xlsx")
+s4_dat <- read_excel("Desktop/Thesis/S4_dat.xlsx")
+s5_dat <- read_excel("Desktop/Thesis/S5_dat.xlsx")
+s6_dat <- read_excel("Desktop/Thesis/S6_dat.xlsx")
+s7_dat <- read_excel("Desktop/Thesis/S7_dat.xlsx")
+s8_dat <- read_excel("Desktop/Thesis/S8_dat.xlsx")
+
+```
+
+#S1 Coding
+```{r}
+S1_no_lift <- subset(s1_dat, s1_dat$OL == "No")
+S1_lift <- subset(s1_dat, s1_dat$OL == "Yes")
+
+S1_NL_STC <- subset(S1_no_lift, S1_no_lift$MT == "NONE")
+S1_NL_LTR <- subset(S1_no_lift, S1_no_lift$MT == "FWD")
+
+S1_L_STC <- subset(S1_lift, S1_lift$MT == "NONE")
+S1_L_LTR <- subset(S1_lift, S1_lift$MT == "FWD")
+```
+
+S1 Regressions
+```{r}
+lm_S1_NL_STC <- lm(PR ~ DS, S1_NL_STC)
+summary(lm_S1_NL_STC)
+
+lm_S1_NL_LTR <- lm(PR ~ DS, S1_NL_LTR)
+summary(lm_S1_NL_LTR)
+
+lm_S1_L_STC <- lm(PR ~ DS, S1_L_STC)
+summary(lm_S1_L_STC)
+
+lm_S1_L_LTR <- lm(PR ~ DS, S1_L_LTR)
+summary(lm_S1_L_LTR)
+```
+
+#S2 Coding
+```{r}
+S2_no_lift <- subset(s2_dat, s2_dat$OL == "No")
+S2_lift <- subset(s2_dat, s2_dat$OL == "Yes")
+
+S2_NL_STC <- subset(S2_no_lift, S2_no_lift$MT == "NONE")
+S2_NL_LTR <- subset(S2_no_lift, S2_no_lift$MT == "FWD")
+
+S2_L_STC <- subset(S2_lift, S2_lift$MT == "NONE")
+S2_L_LTR <- subset(S2_lift, S2_lift$MT == "FWD")
+```
+
+
+S2 Regressions
+```{r}
+lm_S2_NL_STC <- lm(PR ~ DS, S2_NL_STC)
+summary(lm_S2_NL_STC)
+
+lm_S2_NL_LTR <- lm(PR ~ DS, S2_NL_LTR)
+summary(lm_S2_NL_LTR)
+
+lm_S2_L_STC <- lm(PR ~ DS, S2_L_STC)
+summary(lm_S2_L_STC)
+
+lm_S2_L_LTR <- lm(PR ~ DS, S2_L_LTR)
+summary(lm_S2_L_LTR)
+```
+
+#S3 Coding
+```{r}
+S3_no_lift <- subset(s3_dat, s3_dat$OL == "No")
+S3_lift <- subset(s3_dat, s3_dat$OL == "Yes")
+
+S3_NL_STC <- subset(S3_no_lift, S3_no_lift$MT == "NONE")
+S3_NL_LTR <- subset(S3_no_lift, S3_no_lift$MT == "FWD")
+
+S3_L_STC <- subset(S3_lift, S3_lift$MT == "NONE")
+S3_L_LTR <- subset(S3_lift, S3_lift$MT == "FWD")
+```
+
+S3 Regressions
+```{r}
+lm_S3_NL_STC <- lm(PR ~ DS, S3_NL_STC)
+summary(lm_S3_NL_STC)
+
+lm_S3_NL_LTR <- lm(PR ~ DS, S3_NL_LTR)
+summary(lm_S3_NL_LTR)
+
+lm_S3_L_STC <- lm(PR ~ DS, S3_L_STC)
+summary(lm_S3_L_STC)
+
+lm_S3_L_LTR <- lm(PR ~ DS, S3_L_LTR)
+summary(lm_S3_L_LTR)
+```
+
+
+#S4 Coding
+```{r}
+S4_no_lift <- subset(s4_dat, s4_dat$OL == "No")
+S4_lift <- subset(s4_dat, s4_dat$OL == "Yes")
+
+S4_NL_STC <- subset(S4_no_lift, S4_no_lift$MT == "NONE")
+S4_NL_LTR <- subset(S4_no_lift, S4_no_lift$MT == "FWD")
+
+S4_L_STC <- subset(S4_lift, S4_lift$MT == "NONE")
+S4_L_LTR <- subset(S4_lift, S4_lift$MT == "FWD")
+```
+
+#S4 Regressions
+```{r}
+lm_S4_NL_STC <- lm(PR ~ DS, S4_NL_STC)
+summary(lm_S4_NL_STC)
+
+lm_S4_NL_LTR <- lm(PR ~ DS, S4_NL_LTR)
+summary(lm_S4_NL_LTR)
+
+lm_S4_L_STC <- lm(PR ~ DS, S4_L_STC)
+summary(lm_S4_L_STC)
+
+lm_S4_L_LTR <- lm(PR ~ DS, S4_L_LTR)
+summary(lm_S4_L_LTR)
+```
+
+
+#S5 Coding
+```{r}
+S5_no_lift <- subset(s5_dat, s5_dat$OL == "No")
+S5_lift <- subset(s5_dat, s5_dat$OL == "Yes")
+
+S5_NL_STC <- subset(S5_no_lift, S5_no_lift$MT == "NONE")
+S5_NL_LTR <- subset(S5_no_lift, S5_no_lift$MT == "FWD")
+
+S5_L_STC <- subset(S5_lift, S5_lift$MT == "NONE")
+S5_L_LTR <- subset(S5_lift, S5_lift$MT == "FWD")
+```
+
+#S5 Regressions
+```{r}
+lm_S5_NL_STC <- lm(PR ~ DS, S5_NL_STC)
+summary(lm_S5_NL_STC)
+
+lm_S5_NL_LTR <- lm(PR ~ DS, S5_NL_LTR)
+summary(lm_S5_NL_LTR)
+
+lm_S5_L_STC <- lm(PR ~ DS, S5_L_STC)
+summary(lm_S5_L_STC)
+
+lm_S5_L_LTR <- lm(PR ~ DS, S5_L_LTR)
+summary(lm_S5_L_LTR)
+```
+
+#S6 Coding
+```{r}
+S6_no_lift <- subset(s6_dat, s6_dat$OL == "No")
+S6_lift <- subset(s6_dat, s6_dat$OL == "Yes")
+
+S6_NL_STC <- subset(S6_no_lift, S6_no_lift$MT == "NONE")
+S6_NL_LTR <- subset(S6_no_lift, S6_no_lift$MT == "FWD")
+
+S6_L_STC <- subset(S6_lift, S6_lift$MT == "NONE")
+S6_L_LTR <- subset(S6_lift, S6_lift$MT == "FWD")
+```
+
+#S6 Regressions
+```{r}
+lm_S6_NL_STC <- lm(PR ~ DS, S6_NL_STC)
+summary(lm_S6_NL_STC)
+
+lm_S6_NL_LTR <- lm(PR ~ DS, S6_NL_LTR)
+summary(lm_S6_NL_LTR)
+
+lm_S6_L_STC <- lm(PR ~ DS, S6_L_STC)
+summary(lm_S6_L_STC)
+
+lm_S6_L_LTR <- lm(PR ~ DS, S6_L_LTR)
+summary(lm_S6_L_LTR)
+```
+
+#S7 Coding
+```{r}
+S7_no_lift <- subset(s7_dat, s7_dat$OL == "No")
+S7_lift <- subset(s7_dat, s7_dat$OL == "Yes")
+
+S7_NL_STC <- subset(S7_no_lift, S7_no_lift$MT == "NONE")
+S7_NL_LTR <- subset(S7_no_lift, S7_no_lift$MT == "FWD")
+
+S7_L_STC <- subset(S7_lift, S7_lift$MT == "NONE")
+S7_L_LTR <- subset(S7_lift, S7_lift$MT == "FWD")
+```
+
+#S7 Regressions
+```{r}
+lm_S7_NL_STC <- lm(PR ~ DS, S7_NL_STC)
+summary(lm_S7_NL_STC)
+
+lm_S7_NL_LTR <- lm(PR ~ DS, S7_NL_LTR)
+summary(lm_S7_NL_LTR)
+
+lm_S7_L_STC <- lm(PR ~ DS, S7_L_STC)
+summary(lm_S7_L_STC)
+
+lm_S7_L_LTR <- lm(PR ~ DS, S7_L_LTR)
+summary(lm_S7_L_LTR)
+```
+
+#S8 Coding
+```{r}
+S8_no_lift <- subset(s8_dat, s8_dat$OL == "No")
+S8_lift <- subset(s8_dat, s8_dat$OL == "Yes")
+
+S8_NL_STC <- subset(S8_no_lift, S8_no_lift$MT == "NONE")
+S8_NL_LTR <- subset(S8_no_lift, S8_no_lift$MT == "FWD")
+
+S8_L_STC <- subset(S8_lift, S8_lift$MT == "NONE")
+S8_L_LTR <- subset(S8_lift, S8_lift$MT == "FWD")
+```
+
+#S8 Regressions
+```{r}
+lm_S8_NL_STC <- lm(PR ~ DS, S8_NL_STC)
+summary(lm_S8_NL_STC)
+
+lm_S8_NL_LTR <- lm(PR ~ DS, S8_NL_LTR)
+summary(lm_S8_NL_LTR)
+
+lm_S8_L_STC <- lm(PR ~ DS, S8_L_STC)
+summary(lm_S8_L_STC)
+
+lm_S8_L_LTR <- lm(PR ~ DS, S8_L_LTR)
+summary(lm_S8_L_LTR)
+```
+
+------------------------
+
+#Means Import
+```{r}
+mean_regression_dat <- read_excel("Desktop/Thesis/regressions_r.xlsx")
+view(mean_regression_dat)
+```
+
+
+#Paired t-test for Object Lift
+```{r}
+NL_means <- subset(mean_regression_dat, mean_regression_dat$`Object Lift` == 'No')
+L_means <- subset(mean_regression_dat, mean_regression_dat$`Object Lift` == 'Yes')
+
+t.test(NL_means$Slope, L_means$Slope, paired = TRUE)
+```
+
+#Paired t-test for Motion Type
+```{r}
+STC_means <- subset(mean_regression_dat, mean_regression_dat$`Motion Type` == 'STC')
+LTR_means <- subset(mean_regression_dat, mean_regression_dat$`Motion Type` == 'LTR')
+
+t.test(STC_means$Slope, LTR_means$Slope, paired = TRUE)
+```
+
+#Other Things
+```{r}
+age <- c(63, 38, 46, 60, 48, 19, 27, 74)
+mean(age)
+sd(age)
+```
